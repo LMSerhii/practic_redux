@@ -20,7 +20,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, todoReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: {todos: persistedReducer},
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
